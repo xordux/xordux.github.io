@@ -12,10 +12,11 @@
             let newPrice = document.getElementById("newPrice").value;
             let targetAvg = document.getElementById("targetAvg").value;
 
-            result = "Infinite"
-            if (newPrice < currAvg) {
+            res = "Infinite"
+            if (newPrice < currAvg && newPrice < targetAvg) {
                 res = Math.ceil(((currAvg - targetAvg) * shares) / (currAvg - newPrice));
             }
+
             document.getElementById("res").innerHTML = "You will need " + res + " shares."
         }
     </script>
@@ -25,8 +26,8 @@
     No. of shares you have right now: <input type="text" id="shares"> <br>
     Price at which you'll buy new shares: <input type="text" id="newPrice"> <br>
     Target Average: <input type="text" id="targetAvg"> <br>
-    <input type="button" value="Submit" onclick="validateForm()">
-    <span id="res"></span>
+    <input type="button" value="Submit" onclick="validateForm()"> <br>
+    <h2 id="res"></span>
 </body>
 
 </html>

@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title>Random stuff</title>
+</head>
+
+<body>
+    <script>
+        function validateForm() {
+            let currAvg = document.getElementById("currAvg").value;
+            let shares = document.getElementById("shares").value;
+            let newPrice = document.getElementById("newPrice").value;
+            let targetAvg = document.getElementById("targetAvg").value;
+
+            result = "Infinite"
+            if (newPrice < currAvg) {
+                res = Math.ceil(((currAvg - targetAvg) * shares) / (currAvg - newPrice));
+            }
+            document.getElementById("res").innerHTML = "You will need " + res + " shares."
+        }
+    </script>
+
+    <h1>Shares Calculator</h1>
+    Current Average: <input type="text" id="currAvg"> <br>
+    No. of shares you have right now: <input type="text" id="shares"> <br>
+    Price at which you'll buy new shares: <input type="text" id="newPrice"> <br>
+    Target Average: <input type="text" id="targetAvg"> <br>
+    <input type="button" value="Submit" onclick="validateForm()">
+    <span id="res"></span>
+</body>
+
+</html>

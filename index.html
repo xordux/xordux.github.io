@@ -14,7 +14,7 @@
 
             res = "Infinite"
             if (newPrice < currAvg && newPrice < targetAvg) {
-                res = Math.ceil(((currAvg - targetAvg) * shares) / (currAvg - newPrice));
+                res = Math.ceil(((currAvg - targetAvg) * shares) / (targetAvg - newPrice));
             }
 
             document.getElementById("res").innerHTML = "You will need " + res + " shares."
